@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Table de détermination</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="./css/lib/knacss.min.css" media="all" rel="stylesheet">
+    <link href="./css/style.css" media="all" rel="stylesheet">
+    
+    <script src="./js/lib/vue.min.js"></script>
+</head>
+<body>
+    <div class="app-container main-container">
+        <button class="badge badge--inverse reset js-reset">R</button>
+        <div class="card">
+            <h1 class="app-title">Identifie ton champignon</h1>
+            <img v-if="img != ''" src="{{img}}" />
+            <p>{{ text }}</p>
+            <div class="buttons">
+                <input v-if="!endStep" @click="nextYesStep" value="Oui" type="button" class="btn btn--inverse" />
+                <input v-if="!endStep" @click="nextNoStep" value="Non" type="button" class="btn btn--inverse" />
+            </div>
+        </div>
+    </div>
+    <script src="./js/data.js"></script>
+    <script src="./js/app.js"></script>
+    <!-- <p style="text-align:center;">
+        <a href="https://www.freepik.com/free-vector/mushrooms-background_1380819.htm" target="_blank" style="color:#666;">Art by Freepik</a>
+    </p> -->
+</body>
+</html>
